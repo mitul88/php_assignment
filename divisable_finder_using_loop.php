@@ -8,7 +8,7 @@
 <body>
     <h1>3 and 4 Divisable Indices within 500 are below:</h1>
     <?php
-        for ($i = 0; $i < 501; $i++) {
+        for ($i = 1; $i < 501; $i++) {
             if($i % 3 == 0 && $i % 4 == 0) {
                 echo "$i, ";
             }
