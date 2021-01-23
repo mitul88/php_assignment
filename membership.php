@@ -7,8 +7,8 @@
 </head>
 <body>
     
-    <h3>Active members : Shahed, Sadek, Mazher, Rafiu, Auditi</h3>
-    <h3>Enter Your Name</h3>
+    <h3>Active members : shahed, sadek, mazher, rafiu, auditi</h3>
+    <h3>Enter name in small letter from the list</h3>
 
     <form action="" method="post">
         <input type="text" name="member" />
