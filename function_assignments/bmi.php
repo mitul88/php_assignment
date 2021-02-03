@@ -23,14 +23,21 @@
     </form>
 
     <?php
-        $height = $_POST['height'];
-        $weight = $_POST['weight'];
+    
+    if(isset($_POST["submit"])) {
+        
+   
+        $height = isset($_POST['height']) ? $_POST['height'] : "";
+        $weight = isset($_POST['weight']) ? $_POST['weight'] : "";
 
         function bmi($x, $y) {
             return $y / pow($x, 2);
         }
 
-        echo "your BMI is" . bmi($height, $weight);
+        if( !empty($height) && !empty($weight) ) {
+            echo "your BMI is" . bmi($height, $weight);   
+        }
+     }
     ?>
 
 </body>
