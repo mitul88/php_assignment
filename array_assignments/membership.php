@@ -26,7 +26,7 @@
 
        <div id="select">
         <select name="select">
-        <option >--none--</option>
+         <option >--none--</option>
           <option >Rahim</option>
           <option >Sumit</option>
           <option >Sajib</option>
@@ -56,8 +56,10 @@
             }
             else if ($x[$y] >= 18 && $x[$y] <= 40) {
                 echo "<h2 style='color: green'>WELCOME! " . $y . ",  YOU ARE IN !!! </h2>";
-            } else {
+            } else if ($x[$y] >= 41 && $x[$y] <= 100){
                 "<h2 style='color: blue'>" . $y . ", WISHING YOU THE BEST IN THE FUTURE !!! </h2>";
+            } else {
+                "<h2 style='color: yellow'> SELECT A NAME FROM THE DROPDOWN !!! </h2>";
             }
        };
 

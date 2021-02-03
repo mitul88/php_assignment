@@ -177,52 +177,53 @@
 
             if($x >= 0 && $x <= 32) {
                $point = 0;
-               return $grade = "F";
+               $grade = "F";
             }
             else if($x >= 33 && $x <= 35) {
                $point = 1.00;
-               return $grade = "D-";
+               $grade = "D-";
             }
             else if($x >= 36 && $x <= 39) {
                $point = 1.50;
-               return $grade = "D";
+               $grade = "D";
             }
             else if($x >= 40 && $x <= 44) {
                 $point = 2.00;
-                return $grade = "C-";
+                $grade = "C-";
              }
             else if($x >= 45 && $x <= 49) {
                $point = 2.25;
-               return $grade = "C";
+               $grade = "C";
             }
             else if($x >= 50 && $x <= 54) {
                 $point = 2.50;
-                return $grade = "C+";
+                $grade = "C+";
              }
             else if($x >= 55 && $x <= 59) {
                $point = 2.75;
-               return $grade = "B-";
+               $grade = "B-";
             }
             else if($x >= 60 && $x <=64) {
                $point = 3.00;
-               return $grade = "B";
+               $grade = "B";
             }
             else if($x >= 65 && $x <=69) {
                $point = 3.25;
-               return $grade = "B+";
+               $grade = "B+";
             }
             else if($x >= 70 && $x <=79) {
                 $point = 3.50;
-                return $grade = "A-";
+                $grade = "A-";
              }
              else if($x >= 80 && $x <=89) {
                 $point = 3.75;
-                return $grade = "A";
+                $grade = "A";
              }
             else if($x >= 90 && $x <=100) {
                 $point = 4.00;
-                return $grade = "A+";
+                $grade = "A+";
              }
+             return array("point" => $point, "grade" => $grade);
 
     }    
         
@@ -231,10 +232,15 @@
     function marks($x, $y) {
         echo "<h2 style='color:red'>" . $x[$y]["name"] . "</h2>"; 
         
+        $cgpa = 0;
         foreach($x[$y]["marks"] as $mark) {
-            echo "<h3 style='color:blue'>" . key($x[$y]["marks"]) . " marks: " . $mark  . ", grade: " . grade($mark) . "</h3>";
-        }
+            
+            $letter_grade = grade($mark)["grade"];
+            $cgpa += grade($mark)["point"];
+            echo "<h3 style='color:blue'>" . key($x[$y]["marks"]) . " marks: " . $mark  . ", grade: " . $letter_grade . "</h3>";
         
+        }
+        echo $cgpa;
         $total = array_sum($x[$y]["marks"]);
        echo "<h2 style='color:red'> Your total marks :" . $total . "</h2>" ;
     }
