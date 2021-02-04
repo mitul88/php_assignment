@@ -179,41 +179,29 @@
                $point = 0;
                $grade = "F";
             }
-            else if($x >= 33 && $x <= 35) {
-               $point = 1.00;
-               $grade = "D-";
-            }
-            else if($x >= 36 && $x <= 39) {
-               $point = 1.50;
+            else if($x >= 33 && $x <= 39) {
+               $point = 2.25;
                $grade = "D";
             }
-            else if($x >= 40 && $x <= 44) {
-                $point = 2.00;
-                $grade = "C-";
+            else if($x >= 40 && $x <= 49) {
+                $point = 2.50;
+                $grade = "D+";
              }
-            else if($x >= 45 && $x <= 49) {
-               $point = 2.25;
+            else if($x >= 50 && $x <= 55) {
+               $point = 2.75;
                $grade = "C";
             }
-            else if($x >= 50 && $x <= 54) {
-                $point = 2.50;
-                $grade = "C+";
-             }
-            else if($x >= 55 && $x <= 59) {
-               $point = 2.75;
-               $grade = "B-";
-            }
-            else if($x >= 60 && $x <=64) {
+            else if($x >= 56 && $x <=64) {
                $point = 3.00;
-               $grade = "B";
+               $grade = "C+";
             }
             else if($x >= 65 && $x <=69) {
                $point = 3.25;
-               $grade = "B+";
+               $grade = "B";
             }
             else if($x >= 70 && $x <=79) {
                 $point = 3.50;
-                $grade = "A-";
+                $grade = "B+";
              }
              else if($x >= 80 && $x <=89) {
                 $point = 3.75;
@@ -226,23 +214,28 @@
              return array("point" => $point, "grade" => $grade);
 
     }    
+
+    function cgpa_calc($x) {
+        return $x / 5;
+    }
         
     $role = $_POST["select"];
     
     function marks($x, $y) {
         echo "<h2 style='color:red'>" . $x[$y]["name"] . "</h2>"; 
         
-        $cgpa = 0;
+        $cumulated_point = 0;
         foreach($x[$y]["marks"] as $mark) {
             
             $letter_grade = grade($mark)["grade"];
-            $cgpa += grade($mark)["point"];
+            $cumulated_point += grade($mark)["point"];
             echo "<h3 style='color:blue'>" . key($x[$y]["marks"]) . " marks: " . $mark  . ", grade: " . $letter_grade . "</h3>";
         
         }
-        echo $cgpa;
+        $cgpa = cgpa_calc($cumulated_point);
         $total = array_sum($x[$y]["marks"]);
-       echo "<h2 style='color:red'> Your total marks :" . $total . "</h2>" ;
+
+       echo "<h2 style='color:red'> Your total marks :" . $total . "</h2> <h2 style='color:red'> Your CGPA :" . $cgpa . "</h2>";
     }
  
             
