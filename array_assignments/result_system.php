@@ -230,6 +230,7 @@
             $letter_grade = grade($mark)["grade"];
             $cumulated_point += grade($mark)["point"];
             echo "<h3 style='color:blue'>" . key($x[$y]["marks"]) . " marks: " . $mark  . ", grade: " . $letter_grade . "</h3>";
+             $ignore = next($x[$y]["marks"]);
         
         }
         $cgpa = cgpa_calc($cumulated_point);
@@ -244,7 +245,4 @@
     ?>
 </body>
 </html>
-
-
-
 
