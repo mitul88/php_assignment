@@ -45,7 +45,7 @@
     </form>
 
     <?php 
-        $members = ["Rahim" => 22, "Sumit" => 34, "Sajib" => 15, "Rana" => 41, "Selim" => 27, "Faria" => 24, "Nasreen" => 38, "Tapos" => 27, "Tanvir" => 35, "Momen" => 45];
+        $members = ["Rahim" => 13, "Sumit" => 34, "Sajib" => 15, "Rana" => 41, "Selim" => 27, "Faria" => 17, "Nasreen" => 38, "Tapos" => 27, "Tanvir" => 35, "Momen" => 45];
 
         $name =$_POST["select"];
 
@@ -57,9 +57,9 @@
             else if ($x[$y] >= 18 && $x[$y] <= 40) {
                 echo "<h2 style='color: green'>WELCOME! " . $y . ",  YOU ARE IN !!! </h2>";
             } else if ($x[$y] >= 41 && $x[$y] <= 100){
-                "<h2 style='color: blue'>" . $y . ", WISHING YOU THE BEST IN THE FUTURE !!! </h2>";
+                echo "<h2 style='color: blue'>" . $y . ", WISHING YOU THE BEST IN THE FUTURE !!! </h2>";
             } else {
-                "<h2 style='color: yellow'> SELECT A NAME FROM THE DROPDOWN !!! </h2>";
+                echo "<h2 style='color: yellow'> SELECT A NAME FROM THE DROPDOWN !!! </h2>";
             }
        };
 
@@ -67,3 +67,4 @@
     ?>
 </body>
 </html>
+
