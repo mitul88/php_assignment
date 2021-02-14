@@ -51,16 +51,16 @@
         ];
         
         $area = $_POST["select"];
-    
+        
 
-        function residents($x, $y) {
-            if($y == "Banani" || $y == "Mirpur") {
-               echo "<h2 style='color:red'> Residents from " . $y . " are :</h2>" ;
-                foreach($x[$y] as $name) {
+        function residents($residents_arr, $area_key) {
+            if($area_key == "Banani" || $area_key == "Mirpur") {
+               echo "<h2 style='color:red'> Residents from " . $area_key . " are :</h2>" ;
+                foreach($residents_arr[$area_key] as $name) {
                     echo "<h4 style='color:blue'>" .$name . "</h4> <hr>";
                 }
             } else {
-                echo "<h1 style='color:red'> No Data Available For Now !!</h1>";
+                echo "<h1 style='color:red'> Only Banani and Mirpur residents data available !!</h1>";
             }
         }
 
