@@ -25,8 +25,8 @@
         <?php
             $words = $_POST["words"];
 
-            function rev($x) {
-                return strrev($x);
+            function rev($words) {
+                return strrev($words);
             }
             
             echo rev($words);

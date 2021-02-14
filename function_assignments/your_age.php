@@ -25,11 +25,11 @@
     <?php
         $year = $_POST["year"];
 
-        function age($x) {
-            if($x == 0 || null) {
+        function age($num) {
+            if($num == 0 || null) {
                 return "type your birth year";
             } else {
-                return date("Y") - $x;
+                return date("Y") - $num;
             }   
         }
 

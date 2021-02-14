@@ -27,8 +27,8 @@
     <?php
         $heading = $_POST["heading"];
 
-        function createHeading($x) {
-            return "<h1>" . $x . "</h1>";
+        function createHeading($heading) {
+            return "<h1>" . $heading . "</h1>";
         }
     
         echo createHeading($heading);
