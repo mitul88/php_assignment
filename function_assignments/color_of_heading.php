@@ -33,24 +33,24 @@
             echo $heading;
         }
 
-        function changeColor($x, $y) {
-                if($x == "লাল") {
-                    return "<h1 style='color:red'>". $y . "</h1>";
+        function changeColor($color, $heading) {
+                if($color == "লাল") {
+                    return "<h1 style='color:red'>". $heading . "</h1>";
                 }
-                if($x == "সবুজ") {
-                    return "<h1 style='color:green'>". $y . "</h1>";
+                if($color == "সবুজ") {
+                    return "<h1 style='color:green'>". $heading . "</h1>";
                 }
-                if($x == "নীল") {
-                    return "<h1 style='color:blue'>". $y . "</h1>";
+                if($color == "নীল") {
+                    return "<h1 style='color:blue'>". $heading . "</h1>";
                 }
-                if($x == "বেগুনি") {
-                    return "<h1 style='color:SlateBlue'>". $y . "</h1>";
+                if($color == "বেগুনি") {
+                    return "<h1 style='color:SlateBlue'>". $heading . "</h1>";
                 }
-                if($x == "হলুদ") {
-                    return "<h1 style='color:yellow'>". $y . "</h1>";
+                if($color == "হলুদ") {
+                    return "<h1 style='color:yellow'>". $heading . "</h1>";
                 }
-                if($x == "কালো") {
-                    return "<h1 style='color:black'>". $y . "</h1>";
+                if($color == "কালো") {
+                    return "<h1 style='color:black'>". $heading . "</h1>";
                 } 
         }
     
