@@ -27,8 +27,8 @@
         $heading = $_POST["heading"];
         $color = $_POST["color"];
 
-        function heading($x, $y) {
-           return  $x != 0 ? "<h1 style= ' color: $y '>" . $x . "</h1" : " "; 
+        function heading($heading, $color) {
+           return  $heading != 0 ? "<h1 style= ' color: $color '>" . $heading . "</h1" : " "; 
         }
         echo heading($heading, $color);
     ?>

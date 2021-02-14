@@ -26,10 +26,10 @@
     <?php
         $bdt = $_POST["bdt"];
 
-        function currencyConversion($x) {
-            $usd = 84.62 * $x ;
-            $cad = 66.23 * $x ;
-            $pound = 116.10 * $x;
+        function currencyConversion($bdt_amnt) {
+            $usd = 84.62 * $bdt_amnt ;
+            $cad = 66.23 * $bdt_amnt ;
+            $pound = 116.10 * $bdt_amnt;
 
             return "US doller: ".$usd."<br />  Canadian doller: ".$cad. "<br /> and British Sterling:".$pound;
         }
