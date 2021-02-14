@@ -6,7 +6,7 @@
     <title>Image uploader</title>
     <style>
         body{
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content:center;
@@ -32,7 +32,7 @@
         $width =$_POST["width"];
 
         function imageUploader($height, $width, $name) {
-            return "<img src='./laptop_&_coffee.jpg' style='height:$height; width:$width' alt='$z'> <h3>$z</h3>";
+            return "<img src='./laptop_&_coffee.jpg' style='height:$height; width:$width' alt='$z'> <h3>$name</h3>";
         }
 
         echo imageUploader( $height, $width, $name);
