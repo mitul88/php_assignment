@@ -71,16 +71,18 @@
             ],
         ];
 
-        function picnicDonation($x) {
-            $members_arr_len = count($x);
+        function picnicDonation($arr) {
+            $members_arr_len = count($arr);
             $cumulative_amount = 0;
             for($i = 0; $i < $members_arr_len; $i++) {
-//                foreach($x[$i] as $value) {
-//                    echo "<h5>" . key($x[$i]) . " : " . $value . "</h5>";
-//                    $ignore = next($x[$i]);
+                /* following commented code will show individual details on the screen*/
+//                foreach($arr[$i] as $value) {
+//                    echo "<h5>" . key($arr[$i]) . " : " . $value . "</h5>";
+//                    $ignore = next($arr[$i]);
 //                }
 //                echo "<hr>";
-             $cumulative_amount += $x[$i]["amount"];
+                /* the code below will only show the total amount of the donation on the screen */
+             $cumulative_amount += $arr[$i]["amount"];
             }
             echo "<h1 style='color:red'>" . $cumulative_amount . "</h1>";
         }
