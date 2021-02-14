@@ -39,14 +39,15 @@
 
         
 
-        function phonebook($x) {
-            $phnbk_arr_len = count($x);
+        function phonebook($arr) {
+            $phnbk_arr_len = count($arr);
 
             for($i = 0; $i < $phnbk_arr_len; $i++){
                 
-                foreach($x[$i] as $value) {
-                    echo "<h4 style='color:red'> " . key($x[$i]) . " : <span style='color:blue'>" . $value . "</span></h4>";
-                    $ignore = next($x[$i]);
+                foreach($arr[$i] as $value) {
+                    echo "<h4 style='color:red'> " . key($arr[$i]) . " : <span style='color:blue'>" . $value . "</span></h4>";
+                    // ignore variable and the next function below is used to move on to next array key in the foreach loop 
+                    $ignore = next($arr[$i]);
                 }
 
                 echo "<hr>";
