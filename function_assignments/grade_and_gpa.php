@@ -24,35 +24,35 @@
         <br />
     <?php
 
-        function resultSystem($x) {
+        function resultSystem($marks) {
             $gpa = "";
             $grade = "";
 
-            if($x >= 0 && $x <= 32) {
+            if($marks >= 0 && $marks <= 32) {
                 $gpa = 0;
                 $grade = "F";
             }
-            else if($x >= 33 && $x <= 39) {
+            else if($marks >= 33 && $marks <= 39) {
                 $gpa = 1;
                 $grade = "D";
             }
-            else if($x >= 40 && $x <= 49) {
+            else if($marks >= 40 && $marks <= 49) {
                 $gpa = 2;
                 $grade = "C";
             }
-            else if($x >= 50 && $x <= 59) {
+            else if($marks >= 50 && $marks <= 59) {
                 $gpa = 3;
                 $grade = "B";
             }
-            else if($x >= 60 && $x <= 69) {
+            else if($marks >= 60 && $marks <= 69) {
                 $gpa = 3.5;
                 $grade = "A-";
             }
-            else if($x >= 70 && $x <=79) {
+            else if($marks >= 70 && $marks <=79) {
                 $gpa = 3.75;
                 $grade = "A";
             }
-            else if($x >= 80 && $x <=100) {
+            else if($marks >= 80 && $marks <=100) {
                 $gpa = 4.00;
                 $grade = "A+";
             }
