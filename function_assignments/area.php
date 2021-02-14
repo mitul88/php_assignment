@@ -22,12 +22,12 @@
     
     <form action="" method="post">
          <h2>Circle</h2>
-            <label>Type in the Radius: </label><br><input type="number" step="any" name="radius" /><hr />
+            <label>Type in the Radius (in meter): </label><br><input type="number" step="any" name="radius" /><hr />
          <h2>Rectangle</h2>
-            <label>Type in the Length: </label><br><input type="number" step="any" name="length" /><hr />   
-            <label>Type in the width: </label><br><input type="number" step="any" name="width" /><hr />  
+            <label>Type in the Length (in meter): </label><br><input type="number" step="any" name="length" /><br />  <br /> 
+            <label>Type in the width (in meter): </label><br><input type="number" step="any" name="width" /><hr />  
          <h2>Square</h2> 
-            <label>Type in the length of a side: </label><br><input type="number" step="any" name="sq_length" /><hr />  
+            <label>Type in the length of a side (in meter): </label><br><input type="number" step="any" name="sq_length" /><hr />  
     <input type="submit" name="submit" value="Submit!" />
 
     <?php
@@ -37,20 +37,20 @@
         $sq_length = $_POST["sq_length"];
 
         function circle($r) {
-            return 3.1416 * pow($r, 2); 
+            return 2 * 3.1416 * pow($r, 2); 
         }
 
         function rectangle($w,$l){
             return $w * $l;
         }
 
-        function square($sq_length){
-            return pow($sq_length, 2);
+        function square($sq_len){
+            return pow($sq_len, 2);
         }
 
-        echo "<h3>The area of the Cirlce is ".circle($radius)."</h3>";
-        echo "<h3>The area of the Rectangle is ".rectangle($length, $width)."</h3>";
-        echo "<h3>The area of the Square is ".square($sq_length)."</h3>";
+        echo "<h3>The area of the Cirlce is ".circle($radius)." meter square.</h3>";
+        echo "<h3>The area of the Rectangle is ".rectangle($length, $width)." meter square.</h3>";
+        echo "<h3>The area of the Square is ".square($sq_length)." meter square.</h3>";
     ?>
 
 </form>
