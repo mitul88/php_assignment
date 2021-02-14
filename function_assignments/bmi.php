@@ -30,8 +30,8 @@
         $height = isset($_POST['height']) ? $_POST['height'] : "";
         $weight = isset($_POST['weight']) ? $_POST['weight'] : "";
 
-        function bmi($x, $y) {
-            return $y / pow($x, 2);
+        function bmi($height, $weight) {
+            return $weight / pow($x, 2);
         }
 
         if( !empty($height) && !empty($weight) ) {
