@@ -49,17 +49,17 @@
 
         $name =$_POST["select"];
 
-       function signIn($x, $y) {
+       function signIn($arr, $arr_key) {
             
-            if($x[$y] < 18) {
-                echo "<h2 style='color: red'>Sorry " . $y . ", you are not authorized. You should STUDY MORE !!! </h2>";
+            if($arr[$arr_key] > 0 && $arr[$arr_key] < 18) {
+                echo "<h2 style='color: red'>Sorry " . $arr_key . ", you are not authorized. You should STUDY MORE !!! </h2>";
             }
-            else if ($x[$y] >= 18 && $x[$y] <= 40) {
-                echo "<h2 style='color: green'>WELCOME! " . $y . ",  YOU ARE IN !!! </h2>";
-            } else if ($x[$y] >= 41 && $x[$y] <= 100){
-                echo "<h2 style='color: blue'>" . $y . ", WISHING YOU THE BEST IN THE FUTURE !!! </h2>";
+            else if ($arr[$arr_key] >= 18 && $arr[$arr_key] <= 40) {
+                echo "<h2 style='color: green'>WELCOME! " . $arr_key . ",  YOU ARE IN !!! </h2>";
+            } else if ($arr[$arr_key] >= 41 && $arr[$arr_key] <= 100){
+                echo "<h2 style='color: blue'>" . $arr_key . ", WISHING YOU THE BEST IN THE FUTURE !!! </h2>";
             } else {
-                echo "<h2 style='color: yellow'> SELECT A NAME FROM THE DROPDOWN !!! </h2>";
+                echo "<h2 style='color: black'> SELECT A NAME FROM THE DROPDOWN !!! </h2>";
             }
        };
 
