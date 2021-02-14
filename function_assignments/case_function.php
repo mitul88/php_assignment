@@ -31,11 +31,11 @@
         $first_letter = $_POST["first_letter_uppercase"];
         $first_letter_in_words = $_POST["uc_all_first_letter"];
 
-        function letter_case ($a, $b, $c, $d) {
-           $upper = $a != 0 ? strtoupper($a): "type any string" ;
-           $lower = $b != 0 ? strtolower($b): "type any string" ;
-           $first_upper = $c != 0 ? ucfirst($c): "type any string" ;
-           $all_first_letter =  $d != 0 ? ucwords($d): "type any string" ;
+        function letter_case ($u_case, $l_case, $frst_let, $frst_let_in_wrds) {
+           $upper = $u_case != 0 ? strtoupper($u_case): "type any string" ;
+           $lower = $l_case != 0 ? strtolower($l_case): "type any string" ;
+           $first_upper = $frst_let != 0 ? ucfirst($frst_let): "type any string" ;
+           $all_first_letter =  $frst_let_in_wrds != 0 ? ucwords($frst_let_in_wrds): "type any string" ;
 
             return "$upper <br> $lower <br> $first_upper <br> $all_first_letter";
         }
