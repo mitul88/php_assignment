@@ -32,7 +32,7 @@
         $width =$_POST["width"];
 
         function imageUploader($height, $width, $name) {
-            return "<img src='./laptop_&_coffee.jpg' style='height:$height; width:$width' alt='$z'> <h3>$name</h3>";
+            return "<img src='./laptop_&_coffee.jpg' style='height:$height; width:$width' alt='$name'> <h3>$name</h3>";
         }
 
         echo imageUploader( $height, $width, $name);
