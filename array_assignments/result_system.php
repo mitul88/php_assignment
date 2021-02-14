@@ -170,44 +170,44 @@
             )
         );
 
-
-    function grade($x) {
+// grade function is used to determine grades and will be used later in the marks function
+    function grade($marks) {
         $point = "";
         $grade = "";
 
-            if($x >= 0 && $x <= 32) {
+            if($marks >= 0 && $marks <= 32) {
                $point = 0;
                $grade = "F";
             }
-            else if($x >= 33 && $x <= 39) {
+            else if($marks >= 33 && $marks <= 39) {
                $point = 2.25;
                $grade = "D";
             }
-            else if($x >= 40 && $x <= 49) {
+            else if($marks >= 40 && $marks <= 49) {
                 $point = 2.50;
                 $grade = "D+";
              }
-            else if($x >= 50 && $x <= 55) {
+            else if($marks >= 50 && $marks <= 55) {
                $point = 2.75;
                $grade = "C";
             }
-            else if($x >= 56 && $x <=64) {
+            else if($marks >= 56 && $marks <=64) {
                $point = 3.00;
                $grade = "C+";
             }
-            else if($x >= 65 && $x <=69) {
+            else if($marks >= 65 && $marks <=69) {
                $point = 3.25;
                $grade = "B";
             }
-            else if($x >= 70 && $x <=79) {
+            else if($marks >= 70 && $marks <=79) {
                 $point = 3.50;
                 $grade = "B+";
              }
-             else if($x >= 80 && $x <=89) {
+             else if($marks >= 80 && $marks <=89) {
                 $point = 3.75;
                 $grade = "A";
              }
-            else if($x >= 90 && $x <=100) {
+            else if($marks >= 90 && $marks <=100) {
                 $point = 4.00;
                 $grade = "A+";
              }
@@ -215,26 +215,29 @@
 
     }    
 
-    function cgpa_calc($x) {
-        return $x / 5;
+// cgpa_calc function will be used later in the marks function
+    function cgpa_calc($points) {
+        return $points / 5;
     }
-        
+ 
+//  retrive data from the client side  
     $role = $_POST["select"];
-    
-    function marks($x, $y) {
-        echo "<h2 style='color:red'>" . $x[$y]["name"] . "</h2>"; 
+
+// main function
+    function marks($students_arr, $role_key) {
+        echo "<h2 style='color:red'>" . $students_arr[$role_key]["name"] . "</h2>"; 
         
         $cumulated_point = 0;
-        foreach($x[$y]["marks"] as $mark) {
+        foreach($students_arr[$role_key]["marks"] as $mark) {
             
             $letter_grade = grade($mark)["grade"];
             $cumulated_point += grade($mark)["point"];
-            echo "<h3 style='color:blue'>" . key($x[$y]["marks"]) . " marks: " . $mark  . ", grade: " . $letter_grade . "</h3>";
-             $ignore = next($x[$y]["marks"]);
+            echo "<h3 style='color:blue'>" . key($students_arr[$role_key]["marks"]) . " marks: " . $mark  . ", grade: " . $letter_grade . "</h3>";
+             $ignore = next($students_arr[$role_key]["marks"]);
         
         }
         $cgpa = cgpa_calc($cumulated_point);
-        $total = array_sum($x[$y]["marks"]);
+        $total = array_sum($students_arr[$role_key]["marks"]);
 
        echo "<h2 style='color:red'> Your total marks :" . $total . "</h2> <h2 style='color:red'> Your CGPA :" . $cgpa . "</h2>";
     }
