@@ -7,12 +7,14 @@
     <title>Sign Up form</title>
     <!-- bootstrap css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- internal css  -->
     <style>
         body{
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            min-height: 100vh;
         }
     </style>
 </head>
@@ -21,7 +23,7 @@
 <div class="wrap shadow">
     <div class="card">
         <div class="card-title text-center">
-            <h2>Student Form</h2>
+            <h2 style="margin-top:20px;">Student Form</h2>
         </div>
         <div class="card-body">
             <form action="" method="post">
@@ -32,21 +34,41 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-sm">
                         <label for="email">Email</label>
                         <input type="email" class="form-control">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="password">Your Password</label>
-                        <input type="password" class="form-control">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-sm">
+                        <label for="phone">Your Phone Number</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-sm-12 col-md-6">
+                        <label for="password">Your Password</label>
+                        <input type="password" class="form-control">
+                    </div>
+                    <div class="form-group col-sm-12 col-md-6">
                         <label for="confirm_password">Confirm Password</label>
                         <input type="password" class="form-control">
                     </div>
                 </div>
+                <div class="form-row">
+                    <div class="form-group col-sm-12 col-md-6">
+                        <label for="age">Your Age</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group col-sm-12 col-md-6">
+                        <label for="gender">Gender</label>
+                        <select id="inputState" class="form-control">
+                            <option selected>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-block btn-primary">Sign in</button>
             </form>
         </div>
     </div>
