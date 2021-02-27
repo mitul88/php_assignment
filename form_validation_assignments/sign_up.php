@@ -41,7 +41,15 @@
                 $file_size = $file['size'];
                 $size_in_kb = $file_size/1024;
 
-                
+
+                // File extension
+                $file_arr = explode('.', $file_name);
+                $extension = end($file_arr);
+
+                // unique file name generator
+                $unique_name_pro = time() .rand(1, 99999999);
+			    $unique_name = md5($unique_name_pro)  . '.' . $extension ;
+
                 // Required message for each field
                 if( empty($name) ){
 					$err['name'] = "<p style=\" color:red; \"> * Required </p>";
@@ -91,6 +99,14 @@
                    
                     $display_msg =  "<p class=\" alert alert-danger \"> Please, enter valid mobile number ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
                 
+                }else if (!empty($password)) {
+
+                    $password === $confirm_password ?
+                            strlen($password) < 8 && strpbrk($password, '1234567890') !== true ?
+                                $display_msg =  "<p class=\" alert alert-danger \"> Password should be minimum 8 charachters long and should contain atleast a number ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>"
+                                    : $display_msg =  "<p class=\" alert alert-success \"> Confirmed !<button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>"
+                        : $display_msg =  "<p class=\" alert alert-danger \"> Confirm Password should match with Password ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
+                            
                 }
             }
         ?>
