@@ -104,7 +104,11 @@
                     
                     $display_msg =  "<p class=\" alert alert-danger \"> Password should match with confirm password ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
                  
-                 }else if( empty($file_name) ){
+                }else if ($age > 40 || $age < 18) {
+
+                    $display_msg =  "<p class=\" alert alert-info \"> Your age does not match the criteria ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
+                
+                }else if( empty($file_name) ){
                     
                     $display_msg =  "<p class=\" alert alert-danger \"> Please select a file ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
                 
