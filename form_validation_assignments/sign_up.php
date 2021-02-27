@@ -104,9 +104,22 @@
                     
                     $display_msg =  "<p class=\" alert alert-danger \"> Password should match with confirm password ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
                  
-                 }
+                 }else if( empty($file_name) ){
+                    
+                    $display_msg =  "<p class=\" alert alert-danger \"> Please select a file ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
+                
+                }else if ( in_array($extension, ['jpg','png','gif', 'jpeg', 'webp']) == false ){
+
+                    $display_msg =  "<p class=\" alert alert-warning \"> Invalid file format ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
+                 
+                }else if( $size_in_kb > 500 ){
+
+                    $display_msg =  "<p class=\" alert alert-info \"> Image size is too large ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
+                 
+                }
                 else {
 
+                    move_uploaded_file($file_tmp_name, 'photos/' . $unique_name );
                     $display_msg =  '<p class=" alert alert-success "> Congratulations ' . strtoupper($name) . ' ! You are Registered !! <button class="close" data-dismiss="alert">&times;</button> </p>';
                 
                 }
