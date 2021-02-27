@@ -19,6 +19,19 @@
         </style>
     </head>
     <body>
+        
+        <?php
+            if(isset($_POST['insert'])) {
+
+
+
+
+
+
+            }
+        ?>
+
+
     <div class="main py-5">
         <div class="wrap shadow my-2">
         <div class="card">
@@ -30,51 +43,51 @@
                     <div class="form-row">
                         <div class="form-group col-sm">
                             <label for="name">Your Name</label>
-                            <input type="text" class="form-control">
+                            <input type="text" name="name" class="form-control">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-sm">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control">
+                            <input type="email" name="email" class="form-control">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-sm">
                             <label for="phone">Your Phone Number</label>
-                            <input type="text" class="form-control">
+                            <input type="text" name="phone" class="form-control">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-sm-12 col-md-6">
                             <label for="password">Your Password</label>
-                            <input type="password" class="form-control">
+                            <input type="password" name="password" class="form-control">
                         </div>
                         <div class="form-group col-sm-12 col-md-6">
                             <label for="confirm_password">Confirm Password</label>
-                            <input type="password" class="form-control">
+                            <input type="password" name="confirm_password" class="form-control">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-sm-12 col-md-6">
                             <label for="age">Your Age</label>
-                            <input type="text" class="form-control">
+                            <input type="text" name="age" class="form-control">
                         </div>
                         <div class="form-group col-sm-12 col-md-6">
                             <label for="gender">Gender</label>
-                            <select id="inputState" class="form-control">
+                            <select id="inputState" name="gender" class="form-control">
                                 <option selected>Male</option>
                                 <option>Female</option>
                             </select>
                         </div>
                         <div class="form-group text-center col-sm-12">
                             <label for="img_upload"><img width="100" src="upload_img.png" alt=""></label>
-                            <input style="display:none;" type="file" id="img_upload">
+                            <input style="display:none;" name="upload_photo" type="file" id="img_upload">
                             <br>
                             <label>Upload your photo</label>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-block btn-primary">Sign in</button>
+                    <button type="submit" name="insert" class="btn btn-block btn-primary">Sign in</button>
                 </form>
             </div>
         </div>
