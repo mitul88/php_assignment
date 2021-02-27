@@ -32,24 +32,6 @@
                 $age = $_POST['age'];
                 $gender = $_POST['gender'];
 
-                // image file 
-                $file = $_FILES['upload_photo'];
-
-                // value from file array
-                $file_name = $file['name'];
-                $file_tmp_name = $file['tmp_name'];
-                $file_size = $file['size'];
-                $size_in_kb = $file_size/1024;
-
-
-                // File extension
-                $file_arr = explode('.', $file_name);
-                $extension = end($file_arr);
-
-                // unique file name generator
-                $unique_name_pro = time() .rand(1, 99999999);
-			    $unique_name = md5($unique_name_pro)  . '.' . $extension ;
-
                 // Required message for each field
                 if( empty($name) ){
 					$err['name'] = "<p style=\" color:red; \"> * Required </p>";
@@ -108,22 +90,8 @@
 
                     $display_msg =  "<p class=\" alert alert-info \"> Your age does not match the criteria ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
                 
-                }else if( empty($file_name) ){
-                    
-                    $display_msg =  "<p class=\" alert alert-danger \"> Please select a file ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
-                
-                }else if ( in_array($extension, ['jpg','png','gif', 'jpeg', 'webp']) == false ){
+                } else {
 
-                    $display_msg =  "<p class=\" alert alert-warning \"> Invalid file format ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
-                 
-                }else if( $size_in_kb > 500 ){
-
-                    $display_msg =  "<p class=\" alert alert-info \"> Image size is too large ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
-                 
-                }
-                else {
-
-                    move_uploaded_file($file_tmp_name, 'photos/' . $unique_name );
                     $display_msg =  '<p class=" alert alert-success "> Congratulations ' . strtoupper($name) . ' ! You are Registered !! <button class="close" data-dismiss="alert">&times;</button> </p>';
                 
                 }
@@ -132,7 +100,7 @@
 
 
     <div class="main py-5">
-        <div class="wrap shadow my-2">
+        <div class="wrap shadow">
         <div class="card">
             <div class="card-title text-center">
                 <h2 style="margin-top:20px;">Student Form</h2>
@@ -230,12 +198,6 @@
                                 <option selected>Male</option>
                                 <option>Female</option>
                             </select>
-                        </div>
-                        <div class="form-group text-center col-sm-12">
-                            <label for="img_upload"><img width="100" src="upload_img.png" alt=""></label>
-                            <input style="display:none;" name="upload_photo" type="file" id="img_upload">
-                            <br>
-                            <label>Upload your photo</label>
                         </div>
                     </div>
                     <button type="submit" name="insert" class="btn btn-block btn-primary">Sign in</button>
