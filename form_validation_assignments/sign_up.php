@@ -35,7 +35,13 @@
                 // image file 
                 $file = $_FILES['upload_photo'];
 
+                // value from file array
+                $file_name = $file['name'];
+                $file_tmp_name = $file['tmp_name'];
+                $file_size = $file['size'];
+                $size_in_kb = $file_size/1024;
 
+                
                 // Required message for each field
                 if( empty($name) ){
 					$err['name'] = "<p style=\" color:red; \"> * Required </p>";
@@ -66,6 +72,26 @@
 
                 // Phone number first three digit 
                 $phone_start = substr($phone, 0, 3);
+
+
+                // Form validation part
+                if( empty($email) || empty($name) || empty($phone) ) {
+
+                    $display_msg =  "<p class=\" alert alert-danger \"> All fields are required ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
+                
+                }else if( filter_var($email, FILTER_VALIDATE_EMAIL) == false ){
+
+                    $display_msg =  "<p class=\" alert alert-warning \"> Invalid email address ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
+    
+                }else if($authorized_email_extension != "aiub.edu") {
+
+                    $display_msg =  "<p class=\" alert alert-info \"> Use your student email account, (example: xyz@aiub.edu) ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
+                
+                }else if( in_array($phone_start, ['017','018','019','015','013','016','014']) == false ){
+                   
+                    $display_msg =  "<p class=\" alert alert-danger \"> Please, enter valid mobile number ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
+                
+                }
             }
         ?>
 
@@ -77,7 +103,17 @@
                 <h2 style="margin-top:20px;">Student Form</h2>
             </div>
             <div class="card-body">
-                <form action="" method="post">
+
+            <?php 
+
+                if( isset($display_msg) ){
+                    echo $display_msg;
+                }
+
+
+            ?>
+
+                <form action="" method="post" enctype="multipart/form-data">
                     <div class="form-row">
                         <div class="form-group col-sm">
                             <label for="name">Your Name</label>
@@ -94,7 +130,7 @@
                     <div class="form-row">
                         <div class="form-group col-sm">
                             <label for="email">Email</label>
-                            <input type="email" name="email" class="form-control">
+                            <input type="text" name="email" class="form-control">
                             <?php 
 
                                 if( isset($err['email']) ){
