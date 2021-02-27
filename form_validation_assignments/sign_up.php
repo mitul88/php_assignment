@@ -95,6 +95,8 @@
                     $display_msg =  '<p class=" alert alert-success "> Congratulations ' . strtoupper($name) . ' ! You are Registered !! <button class="close" data-dismiss="alert">&times;</button> </p>';
                 
                 }
+                $encrypted_pass = md5($password);
+                $encrypted_con_pass = md5($confirm_password);
             }
         ?>
 
