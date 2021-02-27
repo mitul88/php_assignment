@@ -82,8 +82,9 @@
                 $phone_start = substr($phone, 0, 3);
 
 
+
                 // Form validation part
-                if( empty($email) || empty($name) || empty($phone) ) {
+                if( empty($email) || empty($name) || empty($phone) || empty($password) || empty($confirm_password)) {
 
                     $display_msg =  "<p class=\" alert alert-danger \"> All fields are required ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
                 
@@ -99,15 +100,15 @@
                    
                     $display_msg =  "<p class=\" alert alert-danger \"> Please, enter valid mobile number ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
                 
-                }else if (!empty($password)) {
+                }else if ($password !== $confirm_password ) {
+                    
+                    $display_msg =  "<p class=\" alert alert-danger \"> Password should match with confirm password ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
+                 
+                 }
+                else {
 
-                    $password === $confirm_password ?
-                            strlen($password) < 8 && strpbrk($password, '1234567890') !== true ?
-                                $display_msg =  "<p class=\" alert alert-danger \"> Password should be minimum 8 charachters long and should contain atleast a number ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>"
-                                    : $display_msg =  "<p class=\" alert alert-success \"> Confirmed !<button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>"
-                        :   $encrypted_pass = md5($password) && 
-                        $display_msg =  "<p class=\" alert alert-danger \"> Confirm Password should match with Password ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
-                            
+                    $display_msg =  '<p class=" alert alert-success "> Congratulations ' . strtoupper($name) . ' ! You are Registered !! <button class="close" data-dismiss="alert">&times;</button> </p>';
+                
                 }
             }
         ?>
