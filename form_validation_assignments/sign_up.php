@@ -56,6 +56,16 @@
                 if( empty($age) ){
 				    $err['age'] = "<p style=\" color:red; \"> * Required </p>";
 			    }
+
+
+                // check for valid email extension
+                if(isset($email)) {
+                    $email_arr = explode('@', $email);
+                    $authorized_email_extension = end($email_arr);
+                }
+
+                // Phone number first three digit 
+                $phone_start = substr($phone, 0, 3);
             }
         ?>
 
