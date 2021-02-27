@@ -23,11 +23,39 @@
         <?php
             if(isset($_POST['insert'])) {
 
+                // input values
+                $name = $_POST['name'];
+                $email = $_POST['email'];
+                $phone = $_POST['phone'];
+                $password = $_POST['password'];
+                $confirm_password = $_POST['confirm_password'];
+                $age = $_POST['age'];
+                $gender = $_POST['gender'];
+
+                // image file 
+                $file = $_FILES['upload_photo'];
 
 
+                // Required message for each field
+                if( empty($name) ){
+					$err['name'] = "<p style=\" color:red; \"> * Required </p>";
+			    }
 
-
-
+			    if( empty($email) ){
+				    $err['email'] = "<p style=\" color:red; \"> * Required </p>";
+			    }
+			    if( empty($phone) ){
+				    $err['phone'] = "<p style=\" color:red; \"> * Required </p>";
+			    }
+                if( empty($password) ){
+				    $err['password'] = "<p style=\" color:red; \"> * Required </p>";
+			    }
+                if( empty($confirm_password) ){
+				    $err['confirm_password'] = "<p style=\" color:red; \"> * Required </p>";
+			    }
+                if( empty($age) ){
+				    $err['age'] = "<p style=\" color:red; \"> * Required </p>";
+			    }
             }
         ?>
 
@@ -44,34 +72,76 @@
                         <div class="form-group col-sm">
                             <label for="name">Your Name</label>
                             <input type="text" name="name" class="form-control">
+                            <?php 
+
+                                if( isset($err['name']) ){
+                                    echo $err['name'];
+                                }
+                            
+                            ?>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-sm">
                             <label for="email">Email</label>
                             <input type="email" name="email" class="form-control">
+                            <?php 
+
+                                if( isset($err['email']) ){
+                                    echo $err['email'];
+                                }
+                            
+                            ?>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-sm">
                             <label for="phone">Your Phone Number</label>
                             <input type="text" name="phone" class="form-control">
+                            <?php 
+
+                                if( isset($err['phone']) ){
+                                    echo $err['phone'];
+                                }
+                            
+                            ?>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-sm-12 col-md-6">
                             <label for="password">Your Password</label>
                             <input type="password" name="password" class="form-control">
+                            <?php 
+
+                                if( isset($err['password']) ){
+                                    echo $err['password'];
+                                }
+                            
+                            ?>
                         </div>
                         <div class="form-group col-sm-12 col-md-6">
                             <label for="confirm_password">Confirm Password</label>
                             <input type="password" name="confirm_password" class="form-control">
+                            <?php 
+
+                                if( isset($err['confirm_password']) ){
+                                    echo $err['confirm_password'];
+                                }
+                            
+                            ?>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-sm-12 col-md-6">
                             <label for="age">Your Age</label>
                             <input type="text" name="age" class="form-control">
+                            <?php 
+
+                                if( isset($err['age']) ){
+                                    echo $err['age'];
+                                }
+                            
+                            ?>
                         </div>
                         <div class="form-group col-sm-12 col-md-6">
                             <label for="gender">Gender</label>
