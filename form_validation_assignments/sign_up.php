@@ -105,7 +105,8 @@
                             strlen($password) < 8 && strpbrk($password, '1234567890') !== true ?
                                 $display_msg =  "<p class=\" alert alert-danger \"> Password should be minimum 8 charachters long and should contain atleast a number ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>"
                                     : $display_msg =  "<p class=\" alert alert-success \"> Confirmed !<button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>"
-                        : $display_msg =  "<p class=\" alert alert-danger \"> Confirm Password should match with Password ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
+                        :   $encrypted_pass = md5($password) && 
+                        $display_msg =  "<p class=\" alert alert-danger \"> Confirm Password should match with Password ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
                             
                 }
             }
