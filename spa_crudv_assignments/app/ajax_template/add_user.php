@@ -21,7 +21,7 @@
 
         $uploaded_photo_name = $uploaded_file['unique_file_name']; 
                                
-        $sql_query = "INSERT INTO school_crud (name, username, email, password, cell, gender, role, bloodgroup, dob, photoname) VALUES ('$name', '$username', '$email', ' $pass_hash', '$cell', '$gender', '$role', '$bloodgroup', '$dob', '$uploaded_photo_name')" ;               
+        $sql_query = "INSERT INTO school_crud (name, username, email, password, cell, gender, role, bloodgroup, dob, photoname) VALUES ('$name', '$username', '$email', '$pass_hash', '$cell', '$gender', '$role', '$bloodgroup', '$dob', '$uploaded_photo_name')" ;               
 
         echo (empty($uploaded_file['err_msg'])  ? create($sql_query) :  $uploaded_file['err_msg']) ;
      
