@@ -60,7 +60,17 @@
                 },
                 success: function(data) {
                     console.log(data);
-                    $('#signin_err_ms').html(data);
+
+                    if (data){
+                        $('.app').html(data);
+                        $('.top').css('display', 'none');
+                    }
+                    // else if(data = '<p class=" alert alert-danger ">Password incorrect ! <button class="close" data-dismiss="alert">&times;</button> </p>') {
+                    //     $('#signin_err_ms').html(data);
+                    // } 
+                    // else if(data = '<p class=" alert alert-danger ">User not found ! <button class="close" data-dismiss="alert">&times;</button> </p>') {
+                    //     $('#signin_err_ms').html(data);
+                    // } 
                 }
             })
         }
@@ -94,12 +104,12 @@
                 contentType: false,
                 processData: false,
                 success: function(data) {
-                    console.log(data);
-                        // swal({
-                        //     title: 'Form Submitted',
-                        //     text: 'Account created successfully',
-                        //     icon: 'success'
-                        // });
+                    
+                        swal({
+                            title: 'Form Submitted',
+                            text: 'Account created successfully',
+                            icon: 'success'
+                        });
     
                     $("#createAccount")[0].reset();
                     $('#displayImg').attr('src','');

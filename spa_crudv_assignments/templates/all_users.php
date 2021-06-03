@@ -1,4 +1,4 @@
-<section>
+<section class="my-5">
 <table class="table table-striped">
   <thead>
     <tr>

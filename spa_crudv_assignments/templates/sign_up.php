@@ -1,5 +1,5 @@
     
-<div class="view-section">
+<div class="view-section my-5">
         <div class="card w-50 pt-3 px-2">
             <div class="card-title text-center">
                 <h3>SIGN UP</h3> 

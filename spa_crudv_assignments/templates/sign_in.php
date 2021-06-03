@@ -1,6 +1,6 @@
 
-    <div class="view-section">
-        <div class="card w-50 pt-3 px-2">
+    <div class="view-section my-5">
+        <div class="card w-100 pt-3 px-2">
             <div class="card-title text-center col-sm-12">
                 <h3>SIGN IN</h3> 
             </div>

@@ -1,3 +1,9 @@
+<?php
+
+    include_once "../app/autoload.php";
+
+?>
+
 <div style="width:100%" class="my-5"><h5>Welcome, Shahed Rahman !</h5></div>
  <table class="table">
   
@@ -5,12 +11,12 @@
 
     <tr>  
       <td><i class="fas fa-pen-fancy"></i> <em> Name:</em></td>
-      <td>Otto</td>
+      <td><?php echo $_SESSION['name'];?></td>
     </tr>
     
     <tr>  
       <td><i class="fas fa-user-tag"></i> <em> Username:</em></td>
-      <td>Otto</td>
+      <td><?php echo $_SESSION['username'];?></td>
     </tr>
 
     <tr>  
@@ -20,7 +26,7 @@
     
     <tr>
       <td><i class="fas fa-mobile-alt"></i> <em> Cell:</em></td>
-      <td>01711731977</td>
+      <td><?php echo $_SESSION['cell'];?></td>
     </tr>
     
     <tr>  

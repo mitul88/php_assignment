@@ -13,7 +13,16 @@
 
         while($row = mysqli_fetch_assoc($result)) {
             if( password_verify(  $signInPass ,  $row['password'] ) ) {
-                echo validate('Password correct !','success');
+               
+                $_SESSION['id'] = $row['id'];
+                $_SESSION['name'] = $row['name'];
+                $_SESSION['cell'] = $row['cell'];
+                $_SESSION['username'] = $row['username'];
+
+                header('location:../../templates/profile.php');
+
+
+
             } else {
                  echo validate('Password incorrect !');
             }

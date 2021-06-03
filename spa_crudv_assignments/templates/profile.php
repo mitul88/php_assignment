@@ -1,5 +1,9 @@
+<?php
 
-<?php include_once "./templates/header.php"?>
+    include_once "../app/autoload.php";
+
+?>
+
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
@@ -14,8 +18,8 @@
                         <img class="card-img-top" src="./photo/8.jpg" alt="profile_photo">
                         <div class="card-body bg-light">
                             <div class="card-title text-center">
-                                <h3>Shahed Rahman</h3>
-                                <h6><em>redReckham</em></h6>
+                                <h3><?php echo $_SESSION['name'];?></h3>
+                                <h6><em><?php echo $_SESSION['username'];?></em></h6>
                             </div>
                         </div>
                     </div>
@@ -38,5 +42,5 @@
             </div>
         </div>
    
-        <?php include_once "./templates/footer.php"?>
+
 

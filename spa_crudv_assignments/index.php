@@ -1,6 +1,6 @@
 <?php include_once "./templates/header.php"?>
 
-<div class="container-fluid">
+<div class="container-fluid top">
         <div class="row">
             <div class="col-md-12 py-2">
             
@@ -32,15 +32,15 @@
 
  </div>      
 
- <div class="container">
+ <div class="container-lg">
         <!-- <div class="row">
             <div class="col-12">
                 
             </div>
         </div> -->
-        <div class="row">
-            <div class="col-md-12">
-                <div class="app py-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-sm-12 col-md-6">
+                <div class="app">
 
                 </div>  
             </div>      
