@@ -1,14 +1,28 @@
 <?php
 
-    include_once "../app/autoload.php";
+    include_once "./app/autoload.php";
+    include_once "./templates/header.php";
+
+    if( isset($_GET['logout']) AND $_GET['logout']=='user_logout' ) {
+
+        session_destroy();
+        header('location:./index.php');
+    }
+
+    // user login status check
+
+    if( !isset($_SESSION['login_status'])) {
+        header('location: ./index.php');
+    }
+    
+    $signin_data = signinInfo($_SESSION['user_id']);
 
 ?>
-
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="index.php">SPA</a>
-            <button id="signOut" class="btn btn-outline-dark my-2 my-sm-0"><i class="fas fa-sign-out-alt"></i> SIGN OUT</button>
+            <a id="signOut" href="?logout=user_logout" class="btn btn-outline-dark my-2 my-sm-0"><i class="fas fa-sign-out-alt"></i> SIGN OUT</a>
         </div>
         </nav>
         <div class="container">
@@ -18,8 +32,8 @@
                         <img class="card-img-top" src="./photo/8.jpg" alt="profile_photo">
                         <div class="card-body bg-light">
                             <div class="card-title text-center">
-                                <h3><?php echo $_SESSION['name'];?></h3>
-                                <h6><em><?php echo $_SESSION['username'];?></em></h6>
+                                <h3><?php echo $signin_data->name;?></h3>
+                                <h6><em><?php echo $signin_data->username;?></em></h6>
                             </div>
                         </div>
                     </div>
@@ -42,5 +56,6 @@
             </div>
         </div>
    
-
-
+<?php 
+    include_once "./templates/footer.php";
+?>

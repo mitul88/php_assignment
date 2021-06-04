@@ -36,6 +36,16 @@
         return "<p class=\" alert alert-$msg_type \">$val_msg <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
     }
 
+    // find data 
+    function find($table, $id) {
+        $data = connect() -> query("SELECT * FROM $table WHERE id= '$id' ");
+        return $data->fetch_object();
+    }
+
+    function signinInfo($id) {
+        return find('school_crud', $id);
+    }
+
     function upload_file($file_info, $dir = '/', array $type = ['jpg', 'gif', 'png', 'jpeg']) {
         /*uploaded file management */
         $file_name = $file_info['name'];

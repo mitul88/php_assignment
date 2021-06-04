@@ -58,19 +58,35 @@
                     credential : credential,
                     signInPass : signInPass
                 },
-                success: function(data) {
-                    console.log(data);
+                success: function(response) {
+                    console.log(response);
 
-                    if (data){
-                        $('.app').html(data);
-                        $('.top').css('display', 'none');
+                    try{
+
+                        let json_response = JSON.parse(response);
+
+                        if(json_response.error && json_response.error.includes('Password incorrect')){
+                            $('#signin_err_ms').html(json_response.error);
+                            return;
+                        }
+                        
+                        if(json_response.error && json_response.error.includes('User not found')){
+                            $('#signin_err_ms').html(json_response.error);
+                            return;
+                        }
+
                     }
-                    // else if(data = '<p class=" alert alert-danger ">Password incorrect ! <button class="close" data-dismiss="alert">&times;</button> </p>') {
-                    //     $('#signin_err_ms').html(data);
-                    // } 
-                    // else if(data = '<p class=" alert alert-danger ">User not found ! <button class="close" data-dismiss="alert">&times;</button> </p>') {
-                    //     $('#signin_err_ms').html(data);
-                    // } 
+                    catch (e) {                        
+                        $('.show-profile').html(response);
+                        $('.top').css('display', 'none');
+                        $('.app').css('display', 'none');
+                    }
+
+                    // if (response){
+                    //     $('.show-profile').html(response);
+                    //     $('.top').css('display', 'none');
+                    //     $('.app').css('display', 'none');
+                    // }
                 }
             })
         }

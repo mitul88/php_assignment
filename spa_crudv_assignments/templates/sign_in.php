@@ -5,7 +5,7 @@
                 <h3>SIGN IN</h3> 
             </div>
             <div class="card-body">
-            <div id="signin_err_ms"></div>
+            <div id="signin_err_ms" class="bg-danger text-light text-center"></div>
            
             <form action="" class="d-flex flex-column justify-content-center align-items-center" method="POST">
                 <div class="form-group w-100">

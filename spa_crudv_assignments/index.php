@@ -1,4 +1,14 @@
-<?php include_once "./templates/header.php"?>
+<?php 
+
+    include_once "./templates/header.php";
+    include_once "./app/autoload.php";
+    
+    if( isset( $_SESSION['login_status'] ) AND $_SESSION['login_status'] == true ) {
+        
+        header('location:./profile.php');
+    }
+
+?>
 
 <div class="container-fluid top">
         <div class="row">
@@ -41,6 +51,11 @@
         <div class="row d-flex justify-content-center">
             <div class="col-sm-12 col-md-6">
                 <div class="app">
+
+                </div>  
+            </div>      
+            <div class="col-12">
+                <div class="show-profile">
 
                 </div>  
             </div>      
